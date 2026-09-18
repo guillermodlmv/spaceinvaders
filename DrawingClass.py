@@ -30,3 +30,5 @@ class Drawing:
         points_label = self.font.render(f'Puntos: {puntos}', 1, (255,255,255))
         self.window.blit(points_label, (HEIGHT/2, 10))
         pygame.display.update()
+
+        

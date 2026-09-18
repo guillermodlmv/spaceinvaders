@@ -1,4 +1,5 @@
 
+# Clase Ship
 class Ship:
     def __init__(self, x, y, health=100):
         self.x = x

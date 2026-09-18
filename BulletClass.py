@@ -1,18 +1,18 @@
 import pygame
 
 class Bullet:
-    def __init__(self, x, y):
+    def __init__(self, x, y, img):
         self.x = x
         self.y = y
-        self.image = None
-        self.mask = pygame.mask.from_surface(self.image)
-
+        self.img = img
+        self.mask = pygame.mask.from_surface(self.img)
+    
     def draw(self, window):
-        window.blit(self.image, (self.x, self.y))
-
+        window.blit(self.img, (self.x, self.y))
+    
     def move(self, speed):
         self.y += speed
-
+    
     def collision(self, obj):
-        offset = (int(obj.x - self.x - 30), int(obj.y - self.y - 20))
-        return self.mask.overlap(obj.mask, offset)
+        offset = (int(self.x - obj.x - 30), int(self.y - obj.y - 20))
+        return self.mask.overlap(obj.mask, (offset))
